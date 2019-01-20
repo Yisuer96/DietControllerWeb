@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dietcontroller.dietcontrollerweb.dao.ComponentMapper">
+  <resultMap id="BaseResultMap" type="com.dietcontroller.dietcontrollerweb.model.Component">
+    <result column="component_id" jdbcType="INTEGER" property="component_id" />
+    <result column="user_id" jdbcType="INTEGER" property="user_id" />
+    <result column="component_name" jdbcType="VARCHAR" property="component_name" />
+  </resultMap>
+  <insert id="insert" parameterType="com.dietcontroller.dietcontrollerweb.model.Component">
+    insert into component (component_id, user_id, component_name
+      )
+    values (#{component_id,jdbcType=INTEGER}, #{user_id,jdbcType=INTEGER}, #{component_name,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dietcontroller.dietcontrollerweb.model.Component">
+    insert into component
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="component_id != null">
+        component_id,
+      </if>
+      <if test="user_id != null">
+        user_id,
+      </if>
+      <if test="component_name != null">
+        component_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="component_id != null">
+        #{component_id,jdbcType=INTEGER},
+      </if>
+      <if test="user_id != null">
+        #{user_id,jdbcType=INTEGER},
+      </if>
+      <if test="component_name != null">
+        #{component_name,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

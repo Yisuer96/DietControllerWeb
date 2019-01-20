@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dietcontroller.dietcontrollerweb.dao.ReportMapper">
+  <resultMap id="BaseResultMap" type="com.dietcontroller.dietcontrollerweb.model.Report">
+    <result column="report_id" jdbcType="INTEGER" property="report_id" />
+    <result column="user_id" jdbcType="INTEGER" property="user_id" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="create_date" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+  </resultMap>
+  <insert id="insert" parameterType="com.dietcontroller.dietcontrollerweb.model.Report">
+    insert into report (report_id, user_id, create_date, 
+      description)
+    values (#{report_id,jdbcType=INTEGER}, #{user_id,jdbcType=INTEGER}, #{create_date,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dietcontroller.dietcontrollerweb.model.Report">
+    insert into report
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="report_id != null">
+        report_id,
+      </if>
+      <if test="user_id != null">
+        user_id,
+      </if>
+      <if test="create_date != null">
+        create_date,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="report_id != null">
+        #{report_id,jdbcType=INTEGER},
+      </if>
+      <if test="user_id != null">
+        #{user_id,jdbcType=INTEGER},
+      </if>
+      <if test="create_date != null">
+        #{create_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
