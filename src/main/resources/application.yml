@@ -1,0 +1,3 @@
+mybatis:
+  mapperLocations: classpath:mybatis/mapper/*.xml
+  typeAliasesPackage: com.dietcontroller.dietcontrollerweb.model

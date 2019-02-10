@@ -1,6 +1,6 @@
 package com.dietcontroller.dietcontrollerweb.service;
 
-import org.springframework.stereotype.Component;
 
-public interface IUserService {
+public interface IUserService extends IBaseService {
+    int login(String userName, String password);
 }

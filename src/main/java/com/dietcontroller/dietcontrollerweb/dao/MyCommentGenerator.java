@@ -1,4 +1,4 @@
-package com.dietcontroller.dietcontrollerweb.mapper;
+package com.dietcontroller.dietcontrollerweb.dao;
 import org.mybatis.generator.api.CommentGenerator;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;

@@ -7,7 +7,7 @@
     <context id="my" targetRuntime="MyBatis3">
 
         <!-- 这里的type里写的是你的实现类的类全路径，即上面那个生成器所在的位置 -->
-        <commentGenerator type="com.dietcontroller.dietcontrollerweb.mapper.MyCommentGenerator">
+        <commentGenerator type="com.dietcontroller.dietcontrollerweb.dao.MyCommentGenerator">
         </commentGenerator>
         <!--连接数据库 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"

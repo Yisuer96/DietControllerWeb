@@ -1,4 +1,4 @@
-package com.dietcontroller.dietcontrollerweb.mapper;
+package com.dietcontroller.dietcontrollerweb.dao;
 
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
